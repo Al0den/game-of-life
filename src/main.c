@@ -9,7 +9,6 @@ int main() {
 void GameLoop(GameHandler *game, DisplayHandler display) {
     game->isRunning = true;
     while(game->isRunning) {
-        system("clear");
         drawGrid(*game, display);
         SDL_Event event;
         while (SDL_PollEvent(&event)) {

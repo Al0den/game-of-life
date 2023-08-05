@@ -2,9 +2,8 @@
 
 GameHandler init() {
     int boardSize;
-    printf("Indicate a board size, ranging from 1-99\n");
+    printf("Indicate a board size, ranging from 1-999\n");
     scanf("%d", &boardSize);
-    system("clear");
     printf("Board size: %d\n", boardSize);
     int **board = malloc(sizeof(int*) * boardSize);
     for(int i=0; i<boardSize; i++) {

@@ -10,7 +10,7 @@
 
 #include "/opt/homebrew/include/SDL2/SDL.h"
 
-#define TICK_TIME 100 //ms
+#define TICK_TIME 50 //ms
                       
 #define WINDOW_WIDTH 1500
 #define WINDOW_HEIGHT 1500
