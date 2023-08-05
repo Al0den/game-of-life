@@ -24,18 +24,6 @@ GameHandler init() {
         .gameTick = 0,
         .isRunning = false
     };
-    printGame(game);
     return game;
 }
 
-void printGame(GameHandler game) {
-    int **board = game.board;
-    int boardSize = game.boardSize;
-    
-    for (int i = 0; i < boardSize; i++) {
-        for (int j = 0; j < boardSize; j++) {
-            printf("%d", board[i][j]);
-        }
-        printf("\n");
-    }
-}

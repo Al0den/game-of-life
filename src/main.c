@@ -2,15 +2,25 @@
 
 int main() {
     GameHandler game = init();
-    GameLoop(&game);
+    DisplayHandler display = initDisplay();
+    GameLoop(&game, display);
 }
 
-void GameLoop(GameHandler *game) {
+void GameLoop(GameHandler *game, DisplayHandler display) {
     game->isRunning = true;
     while(game->isRunning) {
         system("clear");
-        printGame(*game);
+        drawGrid(*game, display);
+        SDL_Event event;
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                game->isRunning = false;
+                break;
+            }
+        }
+        // Delay to control the frame rate
+        SDL_Delay(10);
         tick(game);
-        sleep(TICK_TIME);
+        msleep(TICK_TIME);
     }
 }
